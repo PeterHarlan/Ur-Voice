@@ -1,0 +1,41 @@
+{{!-- Main content for voting --}}
+<div class="container mt-3 mb-5">
+	<div class="row">
+		<div class="col-12 offset-0 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+			{{!-- Displays voting --}}
+			<h1 class="display-1"><strong>Vote</strong></h1>
+			<form class="mt-3 needs-validation" method="post" action="/submitVote/"novalidate>
+				<div class="card">
+					{{!-- Poll Title --}}
+					<div class="card-header">
+						<h2 class="text-capitalize">{{polls.0.pollQuestion}}</h2>
+					</div>
+					<div class="card-body">
+						{{!-- For each poll option --}}
+						{{#each polls}}
+						<div class="form-check">
+							{{!-- Add a radio button for a question option--}}
+							<input class="form-check-input" type="radio"name="optionID" id="{{this.optionID}}" value="{{this.optionID}}" required="">
+							{{!-- Create a label that describes the question option --}}
+							<label class="form-check-label text-capitalize" for="exampleRadios1">
+								{{this.optionValue}}
+							</label>
+							{{#if @last}}
+								<div class="invalid-feedback">
+					          	Please Vote!!!
+					        	</div>
+							{{/if}}
+						</div>
+						{{/each}}
+						{{!-- Add the questionID that is used to identify the poll question --}}
+    					<input value="{{polls.0.questionID}}" name="questionID" class="d-none">
+					</div>
+					{{!-- Button --}}
+					<div class="card-footer text-right">
+						<button type="submit" class="btn btn-success">Submit Vote <i class="fas fa-check"></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row my-4">
+    <div class="col-12 offset-0 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      {{!-- Create Form object --}}
+      <form class="needs-validation" novalidate action="/submitPoll" method="post">
+        <h1 class="display-1"><strong>Create</strong></h1>
+        <h1>Poll Question</h1>
+        {{!-- Allow user to add question --}}
+        <div class="form-group">
+          <input class="form-control" id="question" placeholder="Poll Question" name="question" required="">
+          <div class="invalid-feedback">
+            You must add a question before submitting
+          </div>
+        </div>
+        <h1 class="mt-2">Poll Options</h1>
+        <hr>
+        <!-- Stores input -->
+        <div class="form-group mt-2" id="optionList">
+          <input class="form-control mt-2 optionQuestion" id="option1" name="option[]" placeholder="1. Option" required="">
+          <input class="form-control mt-2 optionQuestion" id="option2" name="option[]" placeholder="2. Option" required="">
+          <div class="invalid-feedback" id="feedback">
+            You must add option(s) before submitting
+          </div>
+        </div>
+        <!-- Add button -->
+        <button type="button" class="btn btn-success btn-sm float-right mb-4" id="addBtn"><i class="fas fa-plus"></i></button>
+        <!-- Remove button -->
+        <button type="button" class="btn btn-danger btn-sm float-right mb-4 mr-2" style="display: none;" id="removeBtn"><i class="fas fa-minus"></i></button>
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-success mt-2 mb-3 btn-block">Post Poll</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="container-fluid d-flex homeImage" style=" height: 100vh;">
+  <!--Align the child container to the parent-->
+  <div class="container align-self-center">
+    <!-- Center the childern -->
+    <center>
+      <div>
+        <!-- Hold search image-->
+        <img src="../img/logo.png" class = "img-fluid" alt="Search Image" >
+        {{!-- If the user is logged in, display Discover Polls Button --}}
+        {{#if loggedIn}}
+        <div class="col-md-6 offset-md-3 col-lg-8 offset-lg-2">
+          <a class="btn btn-success btn-lg" href="/allPolls">
+            <i class="fas fa-search"></i><strong> Discover Polls </strong>
+          </a>
+        </div>
+        {{/if}}
+      </div>
+    </center>
+  </div>
+</div>

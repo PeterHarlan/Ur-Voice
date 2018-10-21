@@ -1,0 +1,25 @@
+<div class="container-fluid mt-3 mb-5">
+  <div class="row my-4">
+    <div class="col-12 offset-0 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+      {{!-- Displays Ur Polls or All Polls --}}
+      <h1 class="display-1"><strong>{{pollType}}</strong></h1>
+      <div class="custom-column mt-3">
+        {{!-- For each poll --}}
+        {{#each polls}}
+        <div class="card mb-3">
+          <div class="card-body">
+            {{!-- Display the poll question --}}
+            <h5 class="card-title text-capitalize">{{this.pollQuestion}}</h5>
+          </div>
+          <div class="card-footer text-right d-block">
+            {{!-- Create a vote button for a particular question--}}
+            <a href="vote/{{this.questionID}}" class="btn btn-success btn-sm">Vote <i class="fas fa-check"></i></a>
+            {{!-- Create  a results button for a particular question --}}
+            <a href="results/{{this.questionID}}" class="btn btn-success btn-sm">Results <i class="fas fa-clipboard"></i></a>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

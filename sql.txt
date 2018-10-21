@@ -1,0 +1,9 @@
+#Create customer table for log in
+CREATE TABLE users(userID INT AUTO_INCREMENT, firstName VARCHAR(55), lastName VARCHAR(55), email VARCHAR(255), password VARCHAR(60), KEY(userID, email));
+
+#Create poll table
+CREATE TABLE poll(questionID INT AUTO_INCREMENT, pollQuestion VARCHAR(60), userID int, KEY(questionID, pollQuestion, userID), FOREIGN KEY (userID) REFERENCES users(userID));
+
+#Create question option table
+CREATE TABLE question_options(optionID INT AUTO_INCREMENT,questionID INT, optionValue VARCHAR(60) NOT NULL, voteCount INT, PRIMARY KEY(optionID), FOREIGN KEY (questionID) REFERENCES poll(questionID));
+

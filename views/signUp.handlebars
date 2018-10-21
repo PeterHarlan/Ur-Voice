@@ -1,0 +1,57 @@
+<div class="d-flex align-items-start flex-column" style="height: 100vh; min-height: 600px">
+  <div class="d-flex container-fluid" style="height: 100%">
+    <div class="d-flex mx-auto my-auto">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <!-- Header -->
+            <h1 class="display-1 mb-3 mt-5"><strong>Sign Up</strong></h1>
+            <form class="needs-validation" novalidate action="/register" method="post">
+              <div class="form-row mt-3">
+                <!-- Type first name -->
+                <div class="col-sm-6 mb-3">
+                  <input class="form-control" placeholder="First Name" required type="text" name="firstName">
+                  <div class="invalid-feedback">
+                    First name is required
+                  </div>
+                </div>
+                <!-- Type last name -->
+                <div class="col-sm-6 mb-3">
+                  <input class="form-control" placeholder="Last Name" required type="text" name="lastName">
+                  <div class="invalid-feedback">
+                    Last name is required
+                  </div>
+                </div>
+                <!-- Type email -->
+                <div class="col-sm-12 mb-3">
+                  <input class="form-control" placeholder="Email" required type="text" name="email">
+                  <div class="invalid-feedback">
+                    Email is required
+                  </div>
+                </div>
+                <!-- Type password -->
+                <div class="col-12 mb-3">
+                  <input class="form-control" placeholder="Password" required type="password" name="password">
+                  <div class="invalid-feedback">
+                    Password is required
+                  </div>
+                </div>
+                <!-- Confirm password -->
+                <div class="col-12 mb-3">
+                  <input class="form-control" placeholder="Password (re-typed)" required type="password">
+                  <div class="invalid-feedback">
+                    Password (re-typed) is required
+                  </div>
+                </div>
+                <!-- Button to create account -->
+                <div class="col-12 mb-3">
+                  <button class="btn btn-success" type="submit" >Create Account</button>
+                </div>     
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

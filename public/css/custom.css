@@ -1,0 +1,75 @@
+/*Peter Harlan*/
+.homeImage {
+	/* The image used */
+	background-image: url("../img/homeImage.jpg");
+	/* Center and scale the image nicely */
+	background-position: 50% 0%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*Outer percent bar*/
+.bar{
+	border: 4px solid black;
+	border-radius: 5px;
+	width: 100%;
+}
+
+/*Inner percent bar*/
+.barPercent{
+	height: 40px;
+	width: 8%; 
+	background: rgb(213, 133, 18); 
+	transition: all 1.75s; 
+	color: rgb(213, 133, 18);
+}
+
+/*Ex-Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) { 
+	.largeText{
+		font-size: 25px;
+	}
+	.custom-column{
+		column-count: 1;
+	}
+}
+
+/*Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) { 
+	.largeText{
+		font-size: 35px;
+	}
+	.custom-column{
+		column-count: 2;
+	}
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+	.largeText{
+		font-size: 50px;
+	}
+	.custom-column{
+		column-count: 2;
+	}
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+	.largeText{
+		font-size: 80px;
+	}
+	.custom-column{
+		column-count: 2;
+	}
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1300px) { 
+	.largeText{
+		font-size: 90px;
+	}
+	.custom-column{
+		column-count: 3;
+	}
+}
+
