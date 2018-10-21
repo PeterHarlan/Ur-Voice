@@ -1,9 +1,9 @@
 # UR-Voice
-•	Requirements Summarization
+## Requirements Summarization
 
 Overall, I need to create a polling/voting website that allows the user to create a poll (prompts the user for a poll question and up to six options), displays the available polls (all the polls that can receive votes), displays the results of a poll (the options that the user chose for a poll), display the results of a poll using a bar graph (each bar calculates the percentage of votes each option received in relation to the overall poll), and a backend that records all the functionality of the website (polls, and poll results). When a user votes, he/she can only select one option before submitting a vote; if there is an issue with them submitting a vote, the user will be redirected to a 404 page. 
 
-•	Project Analysis and Design
+##	Project Analysis and Design
 
 My project was designed using Bootstrap, Handlebars, Font Awesome, Node JS (and its dependencies such as Express, and NPM), JavaScript, jQuery, SQL, and CSS. Although it was not a part of the requirements, I make it so that the user of my website must create an account before they have access to any functionalities. To elaborate, the user cannot do anything unless they create an account with my website called Ur Voice. After creating an account with Ur Voice, the user will have the ability to create a poll, answer polls, keep tracks of their poll, and see the results of any poll. 
 
@@ -13,7 +13,7 @@ After a user makes a request, my server generates the frontend webpage using han
 
 The databased that I use for my project is hosted on GearHost. Through GearHost, I set up a SQL server. Although MongoDB is mainly used with Node JS, I decided to use SQL because I am more familiar with a relational database structure when compared to object-oriented data structures like MongoDB. The database design section will summarize the design behind the SQL server. 
 
-•	Database Design
+##	Database Design
 
 Below are the SQL statement used to create the customer, poll, and question option table: 
 
@@ -26,7 +26,9 @@ CREATE TABLE poll(questionID INT AUTO_INCREMENT, pollQuestion VARCHAR(60), userI
 #Create question option table
 CREATE TABLE question_options(optionID INT AUTO_INCREMENT,questionID INT, optionValue VARCHAR(60) NOT NULL, voteCount INT, PRIMARY KEY(optionID), FOREIGN KEY (questionID) REFERENCES poll(questionID));	
 
-![ER Diagram](https://github.com/pharlan97/Ur-Voice/blob/master/Pictures/ER%20Diagram.PNG)
+<p align="center">
+ <img src="https://github.com/pharlan97/Ur-Voice/blob/master/Pictures/ER%20Diagram.PNG">
+</p>
  
 __Figure 1: ER Diagram__
 
@@ -46,9 +48,9 @@ question\_options|optionID|This is a primary key that uniquely identifies each o
 | |questionID|This is a foreign key that references the questionID in the poll table. This is used to retrieve all the options associated with a poll question.  |
 | |optionValue|This holds the option for a poll question that the user can select. |
 | |voteCount|This holds the vote count for each option. The voteCount is incremented each time a user submits a vote.|
- 
+__Table 1: SQL Database Structure__
 
-•	User manual
+##	User manual
 Before the user can use any functionalities associated with my website, UrVoice, they must create an account through the SignUp page that can be found on the navbar of any page while not logged in.  
 
 After the user signs up, they will be redirected to the home page with a message that congratulates the user for signing up. From here the user will be able to log into Ur Voice with their credentials. 
@@ -67,7 +69,7 @@ Two pages not displayed on the navbar is Vote and Results. These pages can be ac
 __Vote__ – allow the user to pick a question option for a poll question (based on the poll question they select in either All Polls or Ur Polls page).
 __Results__ – allow the user to view the results for a poll question (based on the poll question they select in either All Polls or Ur Polls page).
 
-•	Known Problems, Bugs, Limitations, Unimplemented Features
+##	Known Problems, Bugs, Limitations, Unimplemented Features
 
 __Problems/Bugs__
 After testing my webpage, I have not found any problems that are associated with the requirements. The requirements of this project have been fulfilled. 
@@ -75,7 +77,7 @@ __Limitations/Unimplemented Features__
 Since it was not a requirement, I did not create any hashing functions for both frontend and backend to securely handle the user password. In addition, I did not implement the features that allow each user one and only one vote per poll. Moreover, since my website does not keep track of who has voted, it does not redirect the user to the vote page if they have not voted and wanted to go to the results page. 
 
 
-•	References, Acknowledgements, And Outside Sources
+##	References, Acknowledgements, And Outside Sources
 •	The Bootstrap framework was used in association with my project to help with its scalability.
 < https://getbootstrap.com/>
 •	The project was coded using Sublime Text 3 Trial version. 
